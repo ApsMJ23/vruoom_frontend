@@ -18,7 +18,6 @@ function* loginWithPassword(action){
             payload:true,
         })
         const response = yield call(ApiService.loginWithPassword, action.payload);
-        console.log(response);
         if(Object.prototype.hasOwnProperty.call(response.data, 'token')){
             localStorage.setItem('token', response.data.token);
             yield put({
