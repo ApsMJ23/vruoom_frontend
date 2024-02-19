@@ -1,4 +1,5 @@
 export type LoginPayload = {
-    username: string;
+    email: string;
     password: string;
+    onSuccess?: () => void;
 }
