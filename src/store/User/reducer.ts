@@ -1,3 +1,10 @@
+import {CONSTANTS} from "./Constants.ts";
+
+
+export type UserState = {
+    user:UserReducerState
+}
+
 type UserReducerState = {
     userData: UserData;
     isFetching: boolean;
@@ -27,26 +34,76 @@ const initialState: UserReducerState = {
     error: '',
 }
 
+
 const reducer = (state:UserReducerState=initialState, action):UserReducerState => {
     switch(action.type){
-        case 'LOGIN_REQUESTED':
+        case CONSTANTS.LOGIN_REQUESTED:
             return {
                 ...state,
                 isFetching: true,
                 error: '',
             }
-        case 'LOGIN_SUCCESS':
+        case CONSTANTS.LOGIN_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
                 userData: action.payload,
             }
-        case 'LOGIN_FAILED':
+        case CONSTANTS.LOGIN_FAILED:
             return {
                 ...state,
                 isFetching: false,
                 error: action.payload,
             }
+        case CONSTANTS.SIGNUP_REQUESTED:
+            return {
+                ...state,
+                isFetching: true,
+                error: '',
+            }
+        case CONSTANTS.SIGNUP_PROCESSING:
+            return {
+                ...state,
+                isFetching: true,
+                error: '',
+            }
+        case CONSTANTS.SIGNUP_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                userData: action.payload,
+            }
+        case CONSTANTS.SIGNUP_FAILED:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload,
+            }
+        case CONSTANTS.PROFILE_REQUESTED:
+            return {
+                ...state,
+                isFetching: true,
+                error: '',
+            }
+        case CONSTANTS.PROFILE_PROCESSING:
+            return {
+                ...state,
+                isFetching: true,
+                error: '',
+            }
+        case CONSTANTS.PROFILE_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                userData: action.payload,
+            }
+        case CONSTANTS.PROFILE_FAILED:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload,
+            }
+
         default:
             return state;
     }

@@ -1,0 +1,1 @@
+export const VRUOOM_CALL_CENTER = '1800-345-6512'

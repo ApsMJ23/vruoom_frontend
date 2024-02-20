@@ -7,6 +7,7 @@ export const PUBLIC_ROUTES={
 export const PRIVATE_ROUTES={
     BASE_PATH: '/app',
     DASHBOARD: 'dashboard',
+    ACTIVATE: 'activate',
     CLIENT : 'client',
     CLIENT_DETAILS : 'client/:id',
 

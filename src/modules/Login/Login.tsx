@@ -1,15 +1,14 @@
 import {useDispatch} from "react-redux";
-import {login} from "../../store/User/actions.ts";
+import {login, signup} from "../../store/User/actions.ts";
 import styles from './Login.module.scss';
 import LoginForm from "./components/LoginForm/LoginForm.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
 import {emailRegex} from "../../utils/utils.ts";
 import SignupForm from "./components/SignupForm/SignupForm.tsx";
 
 
 const Login = ({isSignup}: { isSignup: boolean }) => {
-
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -23,6 +22,11 @@ const Login = ({isSignup}: { isSignup: boolean }) => {
         username:'',
         last_name: '',
     })
+    useEffect(() => {
+        if(localStorage.getItem('token')){
+            localStorage.clear()
+        }
+    }, []);
     const handleLogin = () => {
         setLoading(true);
         if (!emailRegex.test(formData.email)) {
@@ -41,6 +45,27 @@ const Login = ({isSignup}: { isSignup: boolean }) => {
             })
         )
     }
+    const handleSignup = () => {
+        setLoading(true);
+        if (!emailRegex.test(signupUserData.email)) {
+            setLoading(false);
+            return toast.error('Invalid email address');
+        }
+        if (!signupUserData.password) {
+            setLoading(false);
+            return toast.error('Please enter a valid password');
+        }
+        dispatch(
+            signup({
+                email: signupUserData.email.trim(),
+                password: signupUserData.password,
+                first_name: signupUserData.first_name,
+                last_name: signupUserData.last_name,
+                username: signupUserData.username,
+                onSuccess: () => setLoading(false),
+            })
+        )
+    }
     return (
         <div className={styles.LoginPageWrapper}>
             {
@@ -50,6 +75,7 @@ const Login = ({isSignup}: { isSignup: boolean }) => {
                             signupUserData={signupUserData}
                             setSignupUserData={setSignupUserData}
                             loading={loading}
+                            handleSubmit={handleSignup}
                         />
                     </>
                 ) : (

@@ -19,11 +19,12 @@ type SignupFormProps = {
         last_name: string;
     }>>;
     loading: boolean;
+    handleSubmit: () => void;
 }
 
 
 const SignupForm = (props: SignupFormProps) => {
-    const {signupUserData, setSignupUserData, loading} = props;
+    const {signupUserData, setSignupUserData, loading,handleSubmit} = props;
     return (
         <div className={styles.SignupFormContainer}>
             <h1>Register</h1>
@@ -43,7 +44,7 @@ const SignupForm = (props: SignupFormProps) => {
                         id={'first_name'}
                         type="text"
                         value={signupUserData.first_name}
-                        onChange={(e) => setSignupUserData({...signupUserData, username: e.target.value})}
+                        onChange={(e) => setSignupUserData({...signupUserData, first_name: e.target.value})}
                     />
                 </div>
                 <div className={styles.InputContainer}>
@@ -52,7 +53,7 @@ const SignupForm = (props: SignupFormProps) => {
                         id={'last_name'}
                         type="text"
                         value={signupUserData.last_name}
-                        onChange={(e) => setSignupUserData({...signupUserData, username: e.target.value})}
+                        onChange={(e) => setSignupUserData({...signupUserData, last_name: e.target.value})}
                     />
                 </div>
 
@@ -76,8 +77,7 @@ const SignupForm = (props: SignupFormProps) => {
                     onChange={(e) => setSignupUserData({...signupUserData, password: e.target.value})}
                 />
             </div>
-            <button onClick={() => {
-            }}>
+            <button onClick={handleSubmit}>
                 {loading && <ButtonSpinner height={'1rem'} width={'1rem'}/>}
                 Register
             </button>

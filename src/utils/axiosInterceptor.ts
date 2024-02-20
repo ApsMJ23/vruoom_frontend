@@ -42,6 +42,8 @@ export interface CommonResponse {
     data: object;
 }
 
+const token = localStorage.getItem('token');
+
 const onRequest = (
     config: InternalAxiosRequestConfig<never> | Promise<InternalAxiosRequestConfig<never>>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -83,6 +85,8 @@ export function applyInterceptor(
         (err) => onResponseError(err, navigate),
     );
     // TODO: Add auth token to axios headers if required
-
+    if(token) {
+        axiosInstance.defaults.headers.common['Authorization'] = `Token ${token}`;
+    }
     return axiosInstance;
 }

@@ -39,10 +39,11 @@ const LoginForm = (props: LoginFormProps) => {
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
             />
             </div>
-            <button onClick={handleLogin}>
+            <button type='submit' onClick={handleLogin}>
                 {loading && <ButtonSpinner height={'1rem'} width={'1rem'} />}
                 Login
             </button>
+
             <div style={{alignSelf:'center',justifySelf:'center'}}>OR</div>
             <Link style={{justifySelf:'end'}} to={'/register'}>Don't have an account? Register</Link>
         </div>

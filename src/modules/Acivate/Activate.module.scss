@@ -1,0 +1,21 @@
+@import "../../common/scss/animations";
+
+.ActivateWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  .ActivateContainer{
+    @include animate-fadein(300ms, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 40%;
+    background: #444;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  }
+}
