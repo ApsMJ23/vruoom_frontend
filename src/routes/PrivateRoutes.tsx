@@ -1,6 +1,8 @@
 import {Outlet, useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 import {toast} from "react-toastify";
+import Sidebar from "../common/components/Sidebar/Sidebar.tsx";
+import styles from './PrivateRoutes.module.scss';
 
 
 const PrivateRoutes = () => {
@@ -20,12 +22,12 @@ const PrivateRoutes = () => {
     }, [isActive, navigate]);
 
     return(
-        <>
-        {/*<Sidebar/>*/}
-            <div>
+        <div className={styles.PrivateWrapper}>
+            {isActive==='true'&&<Sidebar/>}
+            <div className={styles.OutletContainer}>
                 <Outlet/>
             </div>
-        </>
+        </div>
     )
 }
 

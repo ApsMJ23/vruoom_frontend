@@ -86,7 +86,11 @@ export function applyInterceptor(
     );
     // TODO: Add auth token to axios headers if required
     if(token) {
-        axiosInstance.defaults.headers.common['Authorization'] = `Token ${token}`;
+        addTokenToHeaders(axiosInstance, token);
     }
     return axiosInstance;
+}
+
+export function addTokenToHeaders(axiosInstance: AxiosInstance, token: string): void {
+    axiosInstance.defaults.headers.common['Authorization'] = `Token ${token}`;
 }

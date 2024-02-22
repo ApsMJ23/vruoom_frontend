@@ -1,0 +1,47 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #555;
+  overflow: hidden;
+  height: 100%;
+  width: 80px;
+  padding: 2rem 0;
+  transition: all 200ms linear;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  font-size: 0.75rem;
+
+  &:hover {
+    width: 250px;
+    font-size: 1.75rem;
+    button {
+      font-size: 0.90rem;
+      width: 50%;
+    }
+  }
+
+  .SidebarTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+
+  }
+
+  .SidebarFooter {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

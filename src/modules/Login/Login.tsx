@@ -23,9 +23,7 @@ const Login = ({isSignup}: { isSignup: boolean }) => {
         last_name: '',
     })
     useEffect(() => {
-        if(localStorage.getItem('token')){
             localStorage.clear()
-        }
     }, []);
     const handleLogin = () => {
         setLoading(true);
