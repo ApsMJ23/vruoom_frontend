@@ -1,0 +1,18 @@
+@import "../../common/scss/animations";
+.DashboardWrapper{
+    @include animate-fadein(300ms, 0, 0);
+    .DashboardHeading{
+        border-bottom: 2px solid beige;
+    }
+}
+
+.ClientContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #222;
+    padding: 0 20px;
+}

@@ -6,6 +6,7 @@ import PrivateRoutes from "./PrivateRoutes.tsx";
 import Login from "../modules/Login-Signup/Login.tsx";
 import {history} from "../utils/utils.ts";
 import Acivate from "../modules/Acivate/Acivate.tsx";
+import Dashboard from "../modules/Dashboard/Dashboard.tsx";
 
 
 const RootRoutes =()=>{
@@ -22,7 +23,7 @@ const RootRoutes =()=>{
                 <Route path={PUBLIC_ROUTES.REGISTER} element={<Login isSignup={true}/>}/>
                 <Route path={PRIVATE_ROUTES.BASE_PATH} element={<PrivateRoutes/>}>
                     <Route path={PRIVATE_ROUTES.ACTIVATE} element={<Acivate/>}/>
-                    <Route path={PRIVATE_ROUTES.DASHBOARD} element={<div>Dashboard Page</div>}/>
+                    <Route path={PRIVATE_ROUTES.DASHBOARD} element={<Dashboard/>}/>
                     <Route path={PRIVATE_ROUTES.CLIENT} element={<div>Profile Page</div>}/>
                 </Route>
 

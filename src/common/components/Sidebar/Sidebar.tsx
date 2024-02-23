@@ -24,6 +24,8 @@ const Sidebar = () => {
             </div>
             <div className={styles.NavLinkContainer}>
                 <Link className={styles.NavLink} to={'/app/dashboard'}>Dashboard</Link>
+                <Link className={styles.NavLink} to={'/app/client'}>Client</Link>
+
             </div>
             <div className={styles.SidebarFooter}>
                 <div className={styles.FooterContainer}>
