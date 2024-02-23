@@ -37,7 +37,7 @@ function* loginWithPassword(action){
                 payload:response.data,
             })
             addTokenToHeaders(axios, response.data.token);
-            toast.success('Login Successful')
+            toast.success('Login-Signup Successful')
             yield put({
                 type:CONSTANTS.PROFILE_REQUESTED,
                 payload:response.data,

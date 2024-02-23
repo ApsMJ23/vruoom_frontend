@@ -3,7 +3,7 @@ import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import BaseRoute from "./BaseRoute.tsx";
 import {PRIVATE_ROUTES, PUBLIC_ROUTES} from "../utils/constants/RoutesConstants.ts";
 import PrivateRoutes from "./PrivateRoutes.tsx";
-import Login from "../modules/Login/Login.tsx";
+import Login from "../modules/Login-Signup/Login.tsx";
 import {history} from "../utils/utils.ts";
 import Acivate from "../modules/Acivate/Acivate.tsx";
 
