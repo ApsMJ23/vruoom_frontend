@@ -24,7 +24,7 @@ const PrivateRoutes = () => {
     return(
         <div className={styles.PrivateWrapper}>
             {isActive==='true'&&<Sidebar/>}
-            <div className={styles.OutletContainer}>
+            <div style={isActive?{width:'100%'}:{}} className={styles.OutletContainer}>
                 <Outlet/>
             </div>
         </div>
