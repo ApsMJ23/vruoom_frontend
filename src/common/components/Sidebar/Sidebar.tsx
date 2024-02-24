@@ -1,13 +1,13 @@
 import styles from './Sidebar.module.scss';
 import {Link, useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {profile} from "../../../store/User/actions.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 
 const Sidebar = () => {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const user = useSelector((state: any) => state.user.userData);
+    const dispatch = useAppDispatch();
+    const user = useAppSelector((state) => state.user.userData);
     useEffect(() => {
         if (!user.username) {
             dispatch(profile())
@@ -24,7 +24,7 @@ const Sidebar = () => {
             </div>
             <div className={styles.NavLinkContainer}>
                 <Link className={styles.NavLink} to={'/app/dashboard'}>Dashboard</Link>
-                <Link className={styles.NavLink} to={'/app/client'}>Client</Link>
+                <Link className={styles.NavLink} to={'/app/client/add'}>Client</Link>
 
             </div>
             <div className={styles.SidebarFooter}>

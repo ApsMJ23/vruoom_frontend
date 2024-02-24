@@ -1,17 +1,16 @@
 import styles from './Activate.module.scss';
-import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {profile} from "../../store/User/actions.ts";
-import {UserState} from "../../store/User/reducer.ts";
 import {VRUOOM_CALL_CENTER} from "../../utils/constants/GeneralConstants.ts";
 import {useNavigate} from "react-router-dom";
 import PageLoader from "../../common/components/PageLoader/PageLoader.tsx";
+import {useAppDispatch, useAppSelector} from "../../common/hooks.ts";
 
 const Acivate = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const navigate = useNavigate()
-    const user = useSelector((state: UserState) => state.user.userData);
-    const loading = useSelector((state: UserState) => state.user.isFetching)
+    const user = useAppSelector((state) => state.user.userData);
+    const loading = useAppSelector((state) => state.user.isFetching)
     useEffect(() => {
         if (!user.email) {
             dispatch(profile())

@@ -1,4 +1,3 @@
-import {useDispatch} from "react-redux";
 import {login, signup} from "../../store/User/actions.ts";
 import styles from './Login.module.scss';
 import LoginForm from "./components/LoginForm/LoginForm.tsx";
@@ -6,10 +5,11 @@ import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
 import {emailRegex} from "../../utils/utils.ts";
 import SignupForm from "./components/SignupForm/SignupForm.tsx";
+import {useAppDispatch} from "../../common/hooks.ts";
 
 
 const Login = ({isSignup}: { isSignup: boolean }) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         password: '',

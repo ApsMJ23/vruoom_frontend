@@ -8,7 +8,7 @@ export const PRIVATE_ROUTES={
     BASE_PATH: '/app',
     DASHBOARD: 'dashboard',
     ACTIVATE: 'activate',
-    CLIENT : 'client',
+    CLIENT_ADD : 'client/add',
     CLIENT_DETAILS : 'client/:id',
 
 }
