@@ -15,7 +15,7 @@
     overflow-y: auto;
     .ClientListHeading{
         display: grid;
-        grid-template-columns: repeat(8,1fr);
+        grid-template-columns: repeat(7,1fr);
         border-bottom: 2px solid beige;
         padding: 10px 0;
         .ClientListHeadingItem{
@@ -31,7 +31,7 @@
         cursor: pointer;
         margin-top: 1rem;
         display: grid;
-        grid-template-columns: repeat(8,1fr);
+        grid-template-columns: repeat(7,1fr);
         padding: 10px 0;
         .ClientListDataItem{
             font-size: 0.8rem;

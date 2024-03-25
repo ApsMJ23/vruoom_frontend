@@ -15,7 +15,7 @@ function* addClients(action){
             payload:true,
         })
         const response = yield call(ApiService.addClient, action.payload);
-        if(response.status === 201){
+        if(response.status >= 200 && response.status < 300){
             yield put({
                 type:CONSTANTS.ADD_CLIENTS_SUCCESS,
                 payload:false,

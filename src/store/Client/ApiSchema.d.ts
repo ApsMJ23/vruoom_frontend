@@ -1,10 +1,17 @@
 export type AddClientPayload = {
-    businessName:string
-    GSTIN:string
-    SAPCode:string
-    PAN:string
-    address:string
-    YearOfEstablishment:string
-    TypeOfFirm:string
-    TypeOfSite:string
-}
+    client: {
+        businessName: string;
+        TypeOfFirm: string;
+        TypeOfSite: string;
+        address: string;
+        AverageSaleVolumeMS: number;
+        AverageSaleVolumeHSD: number;
+        AutomationType: string;
+        HoursOfOperation: string;
+    };
+    employees:{
+        mobileNo: string;
+        whatsappNo: string;
+        role: string;
+    }
+};

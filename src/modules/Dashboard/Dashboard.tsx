@@ -25,11 +25,10 @@ const Dashboard = () => {
                 <div className={styles.ClientList}>
                     <div className={styles.ClientListHeading}>
                         <div className={styles.ClientListHeadingItem}>Business Name</div>
-                        <div className={styles.ClientListHeadingItem}>GSTIN</div>
-                        <div className={styles.ClientListHeadingItem}>SAP Code</div>
-                        <div className={styles.ClientListHeadingItem}>PAN</div>
+                        <div className={styles.ClientListHeadingItem}>Automation Type</div>
+                        <div className={styles.ClientListHeadingItem}>Average Sale HSD</div>
+                        <div className={styles.ClientListHeadingItem}>Average Sale MS</div>
                         <div className={styles.ClientListHeadingItem}>Address</div>
-                        <div className={styles.ClientListHeadingItem}>Year of Establishment</div>
                         <div className={styles.ClientListHeadingItem}>Type of Firm</div>
                         <div className={styles.ClientListHeadingItem}>Type of Site</div>
                     </div>
@@ -37,11 +36,10 @@ const Dashboard = () => {
                         return(
                             <div className={styles.ClientListData}>
                                 <div className={styles.ClientListDataItem}>{client.businessName}</div>
-                                <div className={styles.ClientListDataItem}>{client.GSTIN}</div>
-                                <div className={styles.ClientListDataItem}>{client.SAPCode}</div>
-                                <div className={styles.ClientListDataItem}>{client.PAN}</div>
+                                <div className={styles.ClientListDataItem}>{client.AutomationType}</div>
+                                <div className={styles.ClientListDataItem}>{client.AverageSaleVolumeHSD}</div>
+                                <div className={styles.ClientListDataItem}>{client.AverageSaleVolumeMS}</div>
                                 <div className={styles.ClientListDataItem}>{client.address}</div>
-                                <div className={styles.ClientListDataItem}>{client.YearOfEstablishment}</div>
                                 <div className={styles.ClientListDataItem}>{client.TypeOfFirm}</div>
                                 <div className={styles.ClientListDataItem}>{client.TypeOfSite}</div>
                             </div>
